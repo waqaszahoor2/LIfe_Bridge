@@ -63,7 +63,7 @@ export function SkillGoalForm({ onSubmit, loading }: SkillGoalFormProps) {
     });
   }
 
-  function useSample(sampleText: string) {
+  function applySample(sampleText: string) {
     setRawGoal(sampleText);
     setError("");
   }
@@ -215,7 +215,7 @@ export function SkillGoalForm({ onSubmit, loading }: SkillGoalFormProps) {
         <button
           type="button"
           className="secondary-action-btn"
-          onClick={() => useSample(SAMPLE_GOALS[0])}
+          onClick={() => applySample(SAMPLE_GOALS[0])}
         >
           <span>Use Sample Goal</span>
         </button>

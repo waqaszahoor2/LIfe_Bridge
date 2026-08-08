@@ -98,7 +98,7 @@ export function MentorChat({ roadmapId, currentPhase, isOpen, onClose }: MentorC
     }
   }
 
-  function useQuickQuestion(q: string) {
+  function handleQuickQuestion(q: string) {
     setInput(q);
   }
 
@@ -108,26 +108,24 @@ export function MentorChat({ roadmapId, currentPhase, isOpen, onClose }: MentorC
         {/* Chat Drawer Header */}
         <div className="drawer-header">
           <div className="header-title-row">
-            <Icon name="sparkles" size={22} className="text-primary-500" />
-            <div>
-              <h2>AI Skill Mentor Assistant</h2>
-              <p className="text-xs text-slate-400">Powered by Groq AI • llama-3.1-8b-instant</p>
-            </div>
+            <Icon name="sparkles" size={18} className="text-primary-500" />
+            <span className="drawer-title">LifeBridge AI Mentor</span>
+            <span className="phase-pill font-mono">Phase {currentPhase}</span>
           </div>
-          <button type="button" className="close-btn" onClick={onClose} aria-label="Close Chat Drawer">
+          <button type="button" className="close-btn" onClick={onClose}>
             ✕
           </button>
         </div>
 
         {/* Suggested Prompts */}
         <div className="suggested-prompts-bar">
-          <button type="button" onClick={() => useQuickQuestion(`Explain Phase ${currentPhase} concepts simply`)}>
+          <button type="button" onClick={() => handleQuickQuestion(`Explain Phase ${currentPhase} concepts simply`)}>
             Explain topic simply
           </button>
-          <button type="button" onClick={() => useQuickQuestion(`Give me a coding exercise for Phase ${currentPhase}`)}>
+          <button type="button" onClick={() => handleQuickQuestion(`Give me a coding exercise for Phase ${currentPhase}`)}>
             Give me exercise
           </button>
-          <button type="button" onClick={() => useQuickQuestion(`How do I audit AI code outputs?`)}>
+          <button type="button" onClick={() => handleQuickQuestion(`How do I audit AI code outputs?`)}>
             Audit AI output
           </button>
         </div>
